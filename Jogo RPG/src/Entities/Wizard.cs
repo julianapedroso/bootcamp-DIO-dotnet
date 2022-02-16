@@ -18,7 +18,19 @@ namespace Jogo_RPG.src.Entities
         // Polimorfismo
         public string Attack(int Bonus)
         {
-            return this.Name + ": lançou magia com bônus de ataque de " + Bonus;
+            // Regra de negócio do cálculo do bônus => encapsulamento
+            if (Bonus > 6)
+            {
+                return this.Name +
+                ": lançou magia com super efetiva de bônus de ataque de " +
+                Bonus;
+            }
+            else
+            {
+                return this.Name +
+                ": lançou magia com bônus simples de ataque de " +
+                Bonus;
+            }
         }
     }
 }
